@@ -51,7 +51,7 @@ async function fetchData() {
 
     await getChunkRetrievalDuration(db);
 
-    // Additional metric retrieval functions can be called here, possibly in parallel using Promise.all
+    // Use Promise.all here when more retrieval functions are added
   } catch (error) {
     console.error('Error fetching data:', error.message);
   } finally {
