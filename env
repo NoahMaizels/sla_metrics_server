@@ -1,0 +1,2 @@
+PROMETHEUS=<Your Prometheus URI with API version number>
+MONGO=<MongoDB connection string>
