@@ -5,7 +5,7 @@ const client = require('./db.js');
 
 // Function to fetch data from the Prometheus endpoint and save it to MongoDB
 
-async function fetchData() {
+async function getChunkRetrievalDuration(db) {
   try {
     // Connect the client to the MongoDB server
     await client.connect();
@@ -42,6 +42,23 @@ async function fetchData() {
     await client.close();
   }
 }
+
+
+async function fetchData() {
+  try {
+    await client.connect();
+    const db = client.db('sla_metrics');
+
+    await getChunkRetrievalDuration(db);
+
+    // Additional metric retrieval functions can be called here, possibly in parallel using Promise.all
+  } catch (error) {
+    console.error('Error fetching data:', error.message);
+  } finally {
+    await client.close();
+  }
+}
+
 module.exports = fetchData;
 
 
