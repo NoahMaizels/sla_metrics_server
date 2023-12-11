@@ -1,2 +1,3 @@
+<!-- Fill in your values and change file name to .env -->
 PROMETHEUS=<Your Prometheus URI with API version number>
 MONGO=<MongoDB connection string>
